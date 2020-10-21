@@ -1,0 +1,43 @@
+﻿using System;
+using SIIO.BO;
+using SIIO.Model;
+using System.Web;
+using System.Web.UI;
+
+
+
+namespace SIIO.UI.Usuario
+{
+    public partial class UsuarioCadastro : System.Web.UI.Page
+    {
+        BO.Usuario usuarioBO = new BO.Usuario();
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (Validar())
+                Salvar();
+        }
+
+        private void Salvar()
+        {
+            Model.Usuario usuarioModel = new Model.Usuario();
+            usuarioModel.Nome = txtNome.Text;
+            usuarioModel.Email = txtEmail.Text;
+            usuarioModel.Senha = txtSenha.Text;
+            
+            usuarioBO.Inserir(usuarioModel);
+            Response.Redirect("../Default.aspx");
+        }
+
+        private bool Validar()
+        {
+            if (usuarioBO.ExisteEmail(txtEmail.Text))
+            {
+                //Alert com mensagem de erro
+                return false;
+            }
+
+            return true;
+        }
+    }
+}

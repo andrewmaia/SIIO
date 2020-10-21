@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="SIIO.UI.Site1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>SIIO</title>
+    <link href="Styles/Default.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="login">
+        <asp:LoginView ID="lv"  runat="server">
+            <LoggedInTemplate>
+                <asp:LoginName ID="ln" runat="server" />
+            </LoggedInTemplate>
+        </asp:LoginView>
+        <asp:LoginStatus  ID="ls"  runat="server" LoginText="Fazer Login" LogoutText="Sair"  />
+    </div>
+    <div id="principal">
+
+        <hr/>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
+

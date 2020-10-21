@@ -1,0 +1,19 @@
+﻿/***
+Boas praticas que se aplicam ao site inteiro
+*/
+
+* {
+	margin:0;
+	padding:0;
+}
+
+img {
+	border:none;
+} 
+
+hr
+{
+	display:none;
+}
+
+

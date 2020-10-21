@@ -1,0 +1,60 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="DetalhesIdeia.aspx.cs" Inherits="SIIO.UI.Usuario.DetalhesIdeia" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        #iFrameIdeia
+        {
+            height: 402px;
+            width: 547px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <table>
+        <tr>
+            <td align="right">
+                Autor:
+            </td>
+            <td>
+                <asp:TextBox ID="txtAutor" runat="server" Width="281px"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Pré Descrição:
+            </td>
+            <td>
+                <asp:TextBox ID="txtPreDescricao" runat="server" TextMode="MultiLine" Width="473px"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Idéia:
+            </td>
+            <td rowspan="2">
+                <iframe  id="iFrameIdeia" runat="server" height="400px" scrolling="no" 
+                    width="1000px" frameborder="0"></iframe></td>
+        </tr>
+        <tr>
+            <td align="right" height="90%">
+                &nbsp;</td>
+        </tr>
+    </table>
+</asp:Content>

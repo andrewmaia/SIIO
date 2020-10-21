@@ -1,0 +1,22 @@
+﻿/*Tabela*/
+#ideiaAcessoAprovar_principal table
+{
+    width: 500px;
+}
+
+/*Aprovação*/
+
+#ideiaAcessoAprovar_principal #ideiaAcessoAprovar_aprovar
+{
+    text-align:center;
+}
+
+#ideiaAcessoAprovar_principal #ideiaAcessoAprovar_aprovar a
+{
+    text-align:center;
+    text-decoration: none;
+    color: #669;
+    font-family: Sans-Serif;
+    font-size: 12px;  
+    text-decoration: underline;
+}

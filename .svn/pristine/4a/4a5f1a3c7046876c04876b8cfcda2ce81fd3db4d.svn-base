@@ -1,0 +1,23 @@
+﻿using System;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Collections.Generic;
+
+namespace SIIO.UI.Ideia
+{
+    public partial class IdeiaResultadoBusca : System.Web.UI.Page
+    {
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (Request["texto"] != null)
+            {
+                BO.Ideia ideiaBO = new BO.Ideia();
+                ucIdeiaColecao.Ideias = (List<Model.Ideia>)ideiaBO.Buscar(Request["texto"]);
+                ucIdeiaColecao.DataBind();
+            }
+        }
+    }
+}

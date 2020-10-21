@@ -1,0 +1,50 @@
+﻿using System;
+
+namespace SIIO.Model
+{
+    public class Usuario
+    {
+        public int IdUsuario
+        {
+            get { return this.idUsuario; }
+            set { this.idUsuario = value; }
+        }
+        private int idUsuario;
+
+        public string Email
+        {
+            get { return this.email; }
+            set { this.email = value;}
+        }
+        private string email;
+
+        public string Nome
+        {
+            get { return this.nome; }
+            set { this.nome = value; }
+        }
+        private string nome;
+
+        public string Senha
+        {
+            get { return this.senha; }
+            set { this.senha = value;}
+        }
+        private string senha;
+
+        public bool Situacao
+        {
+            get { return this.situacao; }
+            set { this.situacao = value; }
+        }
+        private bool situacao;
+
+        public DateTime  DataCadastro
+        {
+            get { return this.dataCadastro; }
+            set { this.dataCadastro = value; }
+        }
+        private DateTime dataCadastro;
+
+    }
+}

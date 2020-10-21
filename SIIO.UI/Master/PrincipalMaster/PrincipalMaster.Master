@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PrincipalMaster.Master.cs" Inherits="SIIO.UI.Master.PrincipalMaster" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>SIIO</title>
+    <link rel="shortcut icon" href ="/Common/Imagens/SIIO_SHORTCUT_ICO.jpg" />
+    <asp:ContentPlaceHolder ID="cphPrincipal_cabecalho" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="master_login">
+        <asp:LoginView ID="lv"  runat="server">
+            <LoggedInTemplate>
+                <a href="/MinhasIdeias" title="Gerencie sua conta">
+                    Minha Conta
+                </a> 
+            </LoggedInTemplate>
+        </asp:LoginView>
+        <asp:LoginStatus  ID="ls"  runat="server" LoginText="Fazer Login" LogoutText="Sair"  />
+    </div>
+    <div id="master_principal">
+        <asp:ContentPlaceHolder ID="cphPrincipal_corpo" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
+

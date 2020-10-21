@@ -1,0 +1,33 @@
+﻿#usuarioLogin_principal
+{
+	width:185px;  
+    margin:auto;
+    font-family: sans-serif;
+    font-size: 1em;
+    border: 1px solid #CCC;
+    margin-top:30px;
+    padding-left:20px;
+    padding-right:20px;
+    text-align:center;
+}
+
+#usuarioLogin_principal a
+{
+    display:block;
+    margin-bottom: 1em;
+}
+
+
+/*Formulario*/
+
+#usuarioLogin_principal #usuarioLogin_formulario fieldset
+{
+    margin-top:20px;
+}
+
+#usuarioLogin_principal #usuarioLogin_formulario  input[type="text"],
+#usuarioLogin_principal #usuarioLogin_formulario  input[type="password"]
+{
+    width:90%;
+}
+

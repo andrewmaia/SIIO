@@ -1,0 +1,70 @@
+﻿#ideiaVisualizacao_principal
+{
+	width:420px;  
+    margin:auto;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+/*UcIdeiaMarcarInteresse*/
+#IdeiaVisualizacao_LkInteresse
+{
+    margin-top:20px;
+    text-align:center;
+}
+
+#IdeiaVisualizacao_LkInteresse a
+{
+    text-decoration: underline;   
+}
+
+/*ucIdeiaExibicao*/
+#ideiaVisualizacao_principal #ucIdeiaExibicao_principal legend
+{
+    display:none; 
+}
+
+#ideiaVisualizacao_principal #ucIdeiaExibicao_principal fieldset
+{
+    border: 1px solid #CCC;
+    margin-top:30px;
+    padding-left:20px;
+    padding-top:15px;                
+}
+
+#ideiaVisualizacao_principal #ucIdeiaExibicao_principal .campo 
+{
+    margin-bottom: 1em;
+}
+
+#ideiaVisualizacao_principal #ucIdeiaExibicao_principal .campo label 
+{
+    margin-bottom: 0.5em;
+    color: #666;
+    display: block;
+    border-style:none;    
+}
+
+#ideiaVisualizacao_principal #ucIdeiaExibicao_principal .campo input[type="text"],
+#ideiaVisualizacao_principal #ucIdeiaExibicao_principal .campo textarea
+{
+    width:380px;
+    border-style:none;
+    outline:none;   
+    font-family: sans-serif;
+    font-size: 1em; 
+}
+
+
+#ideiaVisualizacao_principal #ucIdeiaExibicao_principal  #ctl00_ctl00_cphPrincipal_corpo_cphLogo_corpo_ucIdeiaExibicao_txtDescricao
+{
+    height :250px;
+}
+
+#ideiaVisualizacao_principal #ucIdeiaExibicao_principal a
+{
+    color: #000;
+    text-decoration: underline;        
+}
+
+

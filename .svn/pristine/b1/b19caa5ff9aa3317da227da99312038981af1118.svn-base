@@ -1,0 +1,10 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UsuarioLogado.aspx.cs" Inherits="SIIO.UI.Usuario.UsuarioLogado" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HyperLink ID="hpGerenciarConta" runat="server" Font-Bold="True" 
+        ForeColor="#0033CC" NavigateUrl="~/Erro.aspx">Gerenciar minha conta</asp:HyperLink>
+    <br />
+    <asp:HyperLink ID="hpSair" runat="server" Font-Bold="True" ForeColor="#0033CC" 
+        NavigateUrl="~/Usuario/Login.aspx?Sair=S">Sair</asp:HyperLink>
+</asp:Content>

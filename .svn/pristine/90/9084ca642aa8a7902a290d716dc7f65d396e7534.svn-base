@@ -1,0 +1,33 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UsuarioCadastro.aspx.cs" Inherits="SIIO.UI.Usuario.UsuarioCadastro" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        Nome
+        <asp:TextBox ID="txtNome" runat="server" MaxLength="50"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvNome" runat="server" ControlToValidate="txtNome" ErrorMessage="*"></asp:RequiredFieldValidator>
+        <p/>
+        Email
+        <asp:TextBox ID="txtEmail" runat="server" MaxLength="30"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="*"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="E-mail Incorreto" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+        <p/>
+        Senha
+        <asp:TextBox ID="txtSenha" runat="server" TextMode="Password" MaxLength="50"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvSenha" runat="server" ControlToValidate="txtSenha" ErrorMessage="*"></asp:RequiredFieldValidator>
+        Confirmar Senha
+        <asp:TextBox ID="txtConfirmarSenha" runat="server" TextMode="Password"  MaxLength="50"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvConfirmarSenha" runat="server" ControlToValidate="txtConfirmarSenha" ErrorMessage="*"></asp:RequiredFieldValidator>
+        <asp:CompareValidator ID="cvConfirmarSenha" runat="server" ControlToCompare="txtSenha" ErrorMessage="Senha confirmada incorreta" ControlToValidate="txtConfirmarSenha"></asp:CompareValidator>
+        <p/>
+        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" onclick="btnSalvar_Click" />
+    </div>
+    </form>
+</body>
+</html>

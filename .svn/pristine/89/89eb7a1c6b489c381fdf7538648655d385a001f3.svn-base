@@ -1,0 +1,38 @@
+﻿using System;
+using System.Web;
+using System.Web.UI;
+using System.Web.Security;
+using System.Web.UI.WebControls;
+using System.Collections.Generic;
+
+namespace SIIO.UI
+{
+    public partial class Default : Atomo.Web.Page
+    {
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            BO.Ideia ideiaBO = new BO.Ideia();
+
+            ucIdeiaColecaoRecentes.Ideias = (List<Model.Ideia>) ideiaBO.Recentes();
+            ucIdeiaColecaoRecentes.DataBind();
+
+
+            ucIdeiaColecaoMaisVistos.Ideias = (List<Model.Ideia>)ideiaBO.MaisVistas();
+            ucIdeiaColecaoMaisVistos.DataBind();
+        }
+
+        public override List<string> GetCssLinked()
+        {
+            List<string> l = new List<string>();
+            l.Add("default");
+            return l;
+        }
+
+        protected void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(string.Concat("Ideia/IdeiaResultadoBusca.aspx?texto=",txtPesquisa.Text.Trim()));
+        }
+    }
+}

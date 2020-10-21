@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" MasterPageFile="/Master/PrincipalMaster/PrincipalMaster.Master" AutoEventWireup="true" CodeBehind="UsuarioMaster.master.cs" Inherits="SIIO.UI.Master.UsuarioMaster" %>
+<%@ Register src="/Common/Controles/UcMiniCabecalho/UcMiniCabecalho.ascx" tagname="UcMiniCabecalho" tagprefix="uc1" %>
+<%@ Register src="Controles/UcMenu.ascx" tagname="UcMenu" tagprefix="uc2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="cphPrincipal_cabecalho" runat="server">
+    <asp:ContentPlaceHolder  ID="cphUsuario_cabecalho"  runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal_corpo" runat="server">
+    <div id="usuarioMaster_principal">
+        <uc2:UcMenu ID="UcMenu1" runat="server" />
+        <div id="usuarioMaster_conteudo">
+            <uc1:UcMiniCabecalho ID="UcMiniCabecalho1" runat="server" />
+            <asp:ContentPlaceHolder ID="cphUsuario_corpo" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</asp:Content>
+
+

@@ -1,0 +1,49 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SIIO.UI.Default" %>
+<%@ Register Src="Controles/UcIdeiaColecao.ascx" TagName="UcIdeiaColecao" TagPrefix="uc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="topo">
+        <h1>
+            <a href="http://www.siio.com.br" title="SIIO">
+                <img  src="Imagens/SIIO_LOGO.jpg" alt="SIIO" />
+            </a>
+        </h1>
+    </div>
+    <div id="pesquisa">
+        <asp:TextBox ID="txtPesquisa" runat="server" MaxLength="50"  CssClass="txtPesquisa"  ></asp:TextBox>        
+        <asp:Button ID="btnPesquisar" runat="server" Text="Pesquisar" CssClass="btnPesquisar" onclick="btnPesquisar_Click" />
+    </div>
+    <hr/>
+    <div id="conteudo">
+        <div id="maisRecentes">
+            <h2>
+                Mais Recentes
+            </h2>
+            <uc1:UcIdeiaColecao ID="ucIdeiaColecaoRecentes" runat="server" CssClass="ideia" />
+        </div>
+            <hr/>
+        <div id="maisVistos">
+            <h2>
+                Mais Vistos
+            </h2>
+            <uc1:UcIdeiaColecao ID="ucIdeiaColecaoMaisVistos" runat="server"  CssClass="ideia"   />
+        </div>
+        <hr/>
+        <div id="video">
+            <h2>
+                Como Funciona?
+            </h2>    
+            <iframe src="http://www.youtube.com/embed/8BS7PKAOgK0" allowfullscreen="true"></iframe>
+        </div>
+        <hr/>
+        <div id="publicidade">
+            <h2>
+                Publicidade
+            </h2>
+            <a href="http://www.palmeiras.com.br/home/" title="Patrocinador">
+                <img  src="Imagens/atomo.png" alt="Patrocinador" />
+            </a>
+        </div>
+    </div>
+</asp:Content>

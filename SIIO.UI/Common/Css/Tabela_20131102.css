@@ -1,0 +1,40 @@
+﻿.tabela table
+{
+    margin:0 auto;
+    font-family: Sans-Serif;
+    font-size: 12px;
+    background: #fff;
+    border-collapse: collapse;
+    text-align: left;
+    border-style:none;    
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.tabela td
+{
+     color: #669;
+    padding: 9px 8px 0;
+    border-style:none;
+}
+
+
+.tabela th 
+{
+    font-size: 14px;
+    font-weight: normal;
+    color: #039;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 8px;
+    border-style:none;
+}
+
+
+.tabela table a
+{
+    text-decoration: none;
+    color: #669;
+    font-family: Sans-Serif;
+    font-size: 12px;    
+    text-decoration: underline;    
+}

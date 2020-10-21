@@ -1,0 +1,56 @@
+﻿using System;
+
+namespace SIIO.Model
+{
+    public class Ideia
+    {
+        public int IdIdeia
+        {
+            get { return this.idIdeia; }
+            set { this.idIdeia = value; }
+        }
+        private int idIdeia;
+
+        public int IdCategoria
+        {
+            get { return this.idCategoria; }
+            set { this.idCategoria = value; }
+        }
+        private int idCategoria;
+
+        public int IdUsuario
+        {
+            get { return this.idUsuario; }
+            set { this.idUsuario = value; }
+        }
+        private int idUsuario;
+
+        public string Titulo
+        {
+            get { return this.titulo; }
+            set { this.titulo = value; }
+        }
+        private string titulo;
+
+        public string PreDescricao
+        {
+            get { return this.preDescricao; }
+            set { this.preDescricao = value; }
+        }
+        private string preDescricao;
+
+        public string Descricao
+        {
+            get { return this.descricao; }
+            set { this.descricao = value; }
+        }
+        private string descricao;
+
+        public DateTime DataCadastro
+        {
+            get { return this.dataCadastro; }
+            set { this.dataCadastro = value; }
+        }
+        private DateTime dataCadastro;
+    }
+}

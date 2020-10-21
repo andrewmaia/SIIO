@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+
+namespace SIIO.UI.Usuario
+{
+    public partial class DetalhesIdeia : Atomo.Web.Page
+    {
+        //protected HtmlGenericControl iframeIdeia;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            HtmlControl hcframeIdeia = (HtmlControl)this.FindControl("iFrameIdeia");
+            string PrimeiroNome = String.Empty;
+            PrimeiroNome = (string)Session["PrimeiroNome"];
+            
+            //Verificamos se o usuario esta logado para exibir a ideia ou não.
+            if (!String.IsNullOrEmpty(PrimeiroNome))
+                this.iFrameIdeia.Attributes["src"] = "IdeiaAcessoPermitido.aspx";
+            else
+                this.iFrameIdeia.Attributes["src"] = "IdeiaAcessoRestrito.aspx";
+        }
+    }
+}

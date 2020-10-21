@@ -1,0 +1,38 @@
+﻿#ideiaEditar_principal
+{
+	width:400px;  
+    margin:auto;
+    font-family: sans-serif;
+    font-size: 1em;
+    border: 1px solid #CCC;
+    margin-top:30px;
+    padding-left:20px;
+    padding-right:20px;    
+    margin-bottom:30px;
+    padding-top:15px;   
+    text-align:center;     
+}
+
+/*Formulario*/
+#ideiaEditar_principal #ideiaEditar_formulario fieldset
+{
+    width:400px;
+}
+
+#ideiaEditar_principal #ideiaEditar_formulario .campo input[type="text"],
+#ideiaEditar_principal #ideiaEditar_formulario .campo textarea,
+#ideiaEditar_principal #ideiaEditar_formulario .campo select
+{
+    width:380px;
+}
+
+#ideiaEditar_principal #ideiaEditar_formulario .campo textarea
+{
+    height:100px;
+}
+
+#ideiaEditar_principal #ideiaEditar_formulario .campo textarea:focus
+{
+    background: #FFC;
+}
+

@@ -1,0 +1,128 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.SqlClient;
+
+namespace SIIO.DA
+{
+    public class BaseDA
+    {
+        #region Load e Variaveis
+
+        // VARIAVEIS DE CONEXÃO SQL
+        private SqlConnection sConn;
+        private SqlDataAdapter sAdapter;
+        private SqlCommand sCommand;
+
+        public BaseDA()
+        {
+            //rb.Conn = "Data Source=TITAN\\SQL2005EXPRESS;Initial Catalog=SIIO;user=sa;password=87707576;packet size=4096;Connect Timeout=1000000";
+            this.Conexao();
+        }
+
+        #endregion
+
+        public void Conexao()
+        {
+            //CRIANDO VARIAVEL PARA LER A STRING DE CONEXAO A PARTIR DO ARQUIVO WEBCONFIG
+            System.Configuration.AppSettingsReader configurationAppSettings = new System.Configuration.AppSettingsReader();
+
+            //INSTANCIANDO A CONEXAO COM O BANCO
+            this.sConn = new SqlConnection();
+
+            //CONETANDO AO BANCO A PARTIR DA STRING DE CONEXAO
+            this.sConn.ConnectionString = ((String)(configurationAppSettings.GetValue("CONNECTION_STRING", typeof(string))));
+
+            //INSTANCIANDO A VARIÁVEL PARA ARMAZENAR OS COMANDOS
+            sCommand = new SqlCommand();
+            sCommand.Connection = sConn;
+            sAdapter = new SqlDataAdapter();
+        }
+
+        #region Select: Validar Usuario
+
+        public DataSet ValidarUsuario(string pLogin, string pSenha)
+        {
+            DataSet ds = new DataSet();
+
+            sCommand.Parameters.Clear();
+            sCommand.CommandText = "P_ValidarUsuario";
+            sCommand.CommandType = CommandType.StoredProcedure;
+
+            sCommand.Parameters.AddWithValue("@Email", pLogin);
+            sCommand.Parameters.AddWithValue("@Senha", pSenha);
+
+            sAdapter.SelectCommand = sCommand;
+
+            try
+            {
+                sAdapter.Fill(ds);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+
+            return ds;
+        }
+
+        #endregion
+
+        #region Buscar Ideias Recentes ou Mais Vistas
+        public DataSet BuscaIdeias(Int16 pOpcao, Int16 pQuantidade)
+        {
+            DataSet ds = new DataSet();
+
+            sCommand.Parameters.Clear();
+            sCommand.CommandText = "P_Ideias";
+            sCommand.CommandType = CommandType.StoredProcedure;
+
+            sCommand.Parameters.AddWithValue("@Opcao", pOpcao);
+            sCommand.Parameters.AddWithValue("@Quantidade", pQuantidade);
+
+            sAdapter.SelectCommand = sCommand;
+
+            try
+            {
+                sAdapter.Fill(ds);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+
+            return ds;
+        }
+        #endregion
+
+        #region Pesquisar o assunto digitado pelo usuario
+        public DataSet PesquisarAssunto(string pBusca, string pCategoria)
+        {
+            DataSet ds = new DataSet();
+
+            sCommand.Parameters.Clear();
+            sCommand.CommandText = "P_Pesquisar";
+            sCommand.CommandType = CommandType.StoredProcedure;
+
+            sCommand.Parameters.AddWithValue("@Busca", pBusca);
+            sCommand.Parameters.AddWithValue("@Categoria", pCategoria);
+
+            sAdapter.SelectCommand = sCommand;
+
+            try
+            {
+                sAdapter.Fill(ds);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+
+            return ds;
+        }
+        #endregion
+
+    }
+}

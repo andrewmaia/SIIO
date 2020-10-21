@@ -1,0 +1,55 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace SIIO.UI.Usuario
+{
+    public partial class Login : Atomo.Web.Page
+    {
+        SIIO.BO.Usuario UsuarioBO;
+        private string sSair;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //Obtendo valor de outra página.
+            sSair = Request.QueryString.Get("Sair");
+            if (!String.IsNullOrEmpty(sSair) && sSair.Equals("S"))
+            {
+                //Limpando variáveis de sessão dos dados do usuario
+                Session["PrimeiroNome"] = null;
+                Session["SobreNome"] = null;
+                Session["idUsuario"] = null;
+                Session["idNivelUsuario"] = null;
+            }
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            UsuarioBO = new BO.Usuario();
+            String sEmail = txtEmail.Text.Trim();
+            String sSenha = txtSenha.Text.Trim();
+
+            DataTable dtUsuario = UsuarioBO.ValidarLogin(sEmail, sSenha);
+            if (dtUsuario.Rows.Count > 0)
+            {
+                //PREENCHENDO AS VARIÁVEIS DE SESSAO DOS DADOS DO USUARIO
+                Session["PrimeiroNome"] = dtUsuario.Rows[0]["PrimeiroNome"];
+                Session["SobreNome"] = dtUsuario.Rows[0]["SobreNome"];
+                Session["idUsuario"] = dtUsuario.Rows[0]["idUsuario"];
+                Session["idNivelUsuario"] = dtUsuario.Rows[0]["idNivelUsuario"];
+
+                //REDIRECIONANDO PARA A PAGINA DE AREA RESTRITA COM PARÂMETRO LOGADO
+                Response.Redirect("../Usuario/UsuarioLogado.aspx");
+            }
+            else
+            {
+                lblMensagem.Visible = true;
+                lblMensagem.Text = "Dados inválidos.";
+            }
+        }
+    }
+}

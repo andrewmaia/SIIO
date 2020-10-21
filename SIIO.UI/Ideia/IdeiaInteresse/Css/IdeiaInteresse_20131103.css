@@ -1,0 +1,11 @@
+﻿#ideiaInteresse_principal .centralizar
+{
+	text-align:center;
+}
+
+/*Tabela*/
+#ideiaInteresse_principal table
+{
+    width: 500px;
+}
+

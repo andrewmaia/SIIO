@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIIO.UI", "SIIO.UI\SIIO.UI.csproj", "{A70A45F0-825E-4CA6-887B-111B6EA05D53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIIO.BO", "SIIO.BO\SIIO.BO.csproj", "{9AF78B92-492E-4CAD-87BA-FB38F7838A39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIIO.DA", "SIIO.DA\SIIO.DA.csproj", "{BFDCE1B1-7F33-422B-937F-C5E4B8BFA7D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIIO.Model", "SIIO.Model\SIIO.Model.csproj", "{B7A1FD84-AD8E-4A6B-BC89-4CE915C05309}"
+EndProject
+Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "SIIO.DataBase", "SIIO.DataBase\SIIO.DataBase.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A70A45F0-825E-4CA6-887B-111B6EA05D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70A45F0-825E-4CA6-887B-111B6EA05D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70A45F0-825E-4CA6-887B-111B6EA05D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70A45F0-825E-4CA6-887B-111B6EA05D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF78B92-492E-4CAD-87BA-FB38F7838A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF78B92-492E-4CAD-87BA-FB38F7838A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF78B92-492E-4CAD-87BA-FB38F7838A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF78B92-492E-4CAD-87BA-FB38F7838A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFDCE1B1-7F33-422B-937F-C5E4B8BFA7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFDCE1B1-7F33-422B-937F-C5E4B8BFA7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFDCE1B1-7F33-422B-937F-C5E4B8BFA7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFDCE1B1-7F33-422B-937F-C5E4B8BFA7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7A1FD84-AD8E-4A6B-BC89-4CE915C05309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A1FD84-AD8E-4A6B-BC89-4CE915C05309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A1FD84-AD8E-4A6B-BC89-4CE915C05309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7A1FD84-AD8E-4A6B-BC89-4CE915C05309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,156 @@
+﻿
+#default_principal
+{
+    float:left;
+    margin-bottom:50px;
+}
+
+/*Como Funciona*/
+#default_principal #default_video
+{
+	float:right;
+}
+
+#default_principal #default_video h2
+{
+	text-align:center;
+    font: bold 25px sans-serif;   
+	color:#000;
+	padding:20 px 0  0; 
+}
+
+#default_principal #default_video iframe
+{
+	width:350px;
+	height:300px;
+}
+
+/***
+Pesquisa
+*/
+
+#default_principal #default_pesquisa .txtPesquisa
+{
+	width:400px;
+	height:20px;
+    padding: 0.2em;
+    border: 1px solid #CCC;
+}
+
+#default_principal #default_pesquisa .txtPesquisa:focus{
+    background: #FFC;
+}
+
+
+
+#default_principal #default_pesquisa .btnPesquisar
+{
+	height:30px;
+	width:100px;
+	background-color: #fff;
+	color: #000000;
+	border-width:2px;
+	cursor: pointer;
+    font: bold 12px sans-serif;   
+}
+
+
+#default_principal #default_pesquisa .btnPesquisar:hover
+{
+	border-color: #c6c6c6;
+}
+
+#default_principal #default_pesquisa
+{
+	text-align:center;
+	padding-bottom: 100px;	
+}
+
+/***
+Publicidade
+*/
+
+#default_principal #default_publicidade
+{
+	float:right;
+	margin-top:30px;
+	width:350px;
+	text-align:center;
+}
+
+#default_principal #default_publicidade h2
+{
+	text-align:center;	
+    font: bold 25px sans-serif;   
+	color:#000;
+	padding:20 px 0  0; 
+
+}
+
+
+/***
+Top 10 Ideia
+*/
+
+#default_principal .default_top10Ideia
+{
+	width: 200px;
+	float:left;
+    margin-left:30px;   	
+    overflow:hidden;
+}
+
+#default_principal .default_top10Ideia .ideia
+{
+	margin-top: 10px;
+}
+
+#default_principal .default_top10Ideia .ideia a
+{
+	text-decoration:none;
+	color:#000; 
+}
+
+#default_principal .default_top10Ideia p
+{
+    height:15px;
+    overflow:hidden;
+    padding-top: 3px ;
+    padding-bottom:3px ;    
+}
+
+
+#default_principal .default_top10Ideia .ideia:hover
+{
+	background-color: #E6E8FA;
+}
+
+#default_principal .default_top10Ideia h2
+{
+    font: bold 25px sans-serif;        
+	color:#000;
+	padding:20 px 0  0; 
+}
+
+/***
+Topo
+*/
+
+#default_principal #default_topo
+{
+	text-align:center;
+	padding: 40px 40px 40px 40px;
+}
+
+/*Rodapé*/
+
+#default_principal #default_rodape
+{
+    width:100%;
+    float:left;
+    text-align:center;
+    margin-top:40px;
+    color: #666;
+    font-family: sans-serif;
+    font-size: 1em;    
+}

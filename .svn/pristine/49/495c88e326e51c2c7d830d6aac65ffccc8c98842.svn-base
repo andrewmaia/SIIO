@@ -1,0 +1,13 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="Erro.aspx.cs" Inherits="SIIO.UI.Erro" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+        <p>
+            Esta é uma versão Beta do site SIIO</p>
+        <p>
+            Sendo assim alguns módulos ainda não estão disponíveis.</p>
+        <p>
+            Obrigado.</p>
+</asp:Content>

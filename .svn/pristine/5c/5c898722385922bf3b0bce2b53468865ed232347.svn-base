@@ -1,0 +1,139 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace SIIO.UI
+{
+    public partial class _Default2 : Atomo.Web.Page
+    {
+        #region Page Load
+
+        private BO.Ideia objIdeia;
+        private string Categoria = String.Empty;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            objIdeia = new BO.Ideia();
+
+            lblContador.Visible = false;
+            txtPesquisa.Focus();
+
+            if (!IsPostBack)
+                this.CarregarTela();
+        }
+
+        #endregion
+
+        private void CarregarTela()
+        {
+            //Falta implementar um método para definir os parametros dinamicamente
+            DataTable dtIdeia = objIdeia.IdeiasRecentes();
+            if (dtIdeia.Rows.Count > 0)
+            {
+                gvIdeiasRecentes.DataSource = dtIdeia;
+                gvIdeiasRecentes.DataBind();
+            }
+
+            dtIdeia = objIdeia.IdeiasMaisVistas();
+            if (dtIdeia.Rows.Count > 0)
+            {
+                gvMaisVistos.DataSource = dtIdeia;
+                gvMaisVistos.DataBind();
+            }
+
+        }
+
+        protected void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            //MONTANDO LOGICA PARA CATEGORIA
+            if (chkFinancas.Checked)
+                Categoria = Categoria + "1,";
+            if (chkEconomia.Checked)
+                Categoria = Categoria + "2,";
+            if (chkDireito.Checked)
+                Categoria = Categoria + "3,";
+            if (chkArtes.Checked)
+                Categoria = Categoria + "4,";
+            if (chkEsporte.Checked)
+                Categoria = Categoria + "5,";
+            if (chkInternet.Checked)
+                Categoria = Categoria + "6,";
+
+            if (String.IsNullOrEmpty(Categoria) == false)
+                Categoria = Categoria.Substring(0, Categoria.Length - 1);
+
+            //REALIZANDO BUSCA COM OS DADOS OBTIDOS
+            this.Busca();
+        }
+
+        private void Busca()
+        {
+            if (String.IsNullOrEmpty(txtPesquisa.Text) == false)
+            {
+                gvPesquisa.DataSource = objIdeia.PesquisarAssunto(txtPesquisa.Text, Categoria);
+                gvPesquisa.DataBind();
+            }
+
+            lblContador.Visible = true;
+            if (gvPesquisa.Rows.Count > 0)
+            {
+                gvPesquisa.Visible = true;
+                lblContador.Text = "Foram Encontrado(s) " + gvPesquisa.Rows.Count + " Registro(s).";
+            }
+            else
+            {
+                gvPesquisa.Visible = false;
+                lblContador.Text = "Por favor pesquise por mais palavras chave";
+            }
+        }
+
+        #region Métodos Utilizados para permitir exibição de tags Html nos Grids
+
+        protected void gvIdeiasRecentes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            this.HabilitarHtmlEncode(sender, e);
+        }
+
+        protected void gvMaisVistos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+            this.HabilitarHtmlEncode(sender, e);
+        }
+
+        protected void gvPesquisa_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            this.HabilitarHtmlEncode(sender, e);
+        }
+
+        private void HabilitarHtmlEncode(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                TableCellCollection cells = e.Row.Cells;
+
+                foreach (TableCell cell in cells)
+                {
+                    cell.Text = Server.HtmlDecode(cell.Text);
+                }
+            }
+        }
+
+        #endregion
+
+        public override List<string> GetCssLinked()
+        {
+            List<string> l = new List<string>();
+            l.Add("siio");
+            return l;
+        }
+
+        public override string GetCss()
+        {
+            return "h1 {color: #FF9999}";
+        }
+    }
+}

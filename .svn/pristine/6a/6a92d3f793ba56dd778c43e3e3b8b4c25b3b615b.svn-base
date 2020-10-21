@@ -1,0 +1,25 @@
+﻿using System;
+using Atomo.Data;
+
+namespace SIIO.DA
+{
+    public class Usuario : BaseDA 
+    {
+        public byte Validar(Model.Usuario parametros)
+        {
+            object o =rb.EncapsulatedRead(parametros, "dbo.Usuario_Validar",0, false);
+            return (byte)o.GetType().GetProperties()[0].GetValue(o, null);
+        }
+
+        public bool ExisteEmail(Model.Usuario parametros)
+        {
+            object o = rb.EncapsulatedRead(parametros, "dbo.Usuario_ExisteEmail", 0, false);
+            return (bool)o.GetType().GetProperties()[0].GetValue(o, null);
+        }
+
+        public void Inserir(Model.Usuario parametros)
+        {
+            rb.EncapsulatedInsert(parametros, "dbo.Usuario_Inserir");
+        }
+    }
+}

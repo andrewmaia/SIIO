@@ -1,0 +1,7 @@
+﻿using System;
+
+namespace SIIO.Model.Enums
+{
+    public enum Autenticacao { UsuarioInvalido, SenhaInvalida, Valido }
+}
+

@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace SIIO.UI
+{
+    public partial class SiteMaster : Atomo.Web.MasterPage
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void RegisterLinks()
+        {
+            this.CssContainer.CssLinkedInfo.Add("siio", new Atomo.Web.CssInfo("c:\\siio.css", "c:\\siio.css", "all"));
+        }
+
+        public override List<string> GetCssCommon()
+        {
+            List<string> l = new List<string>();
+            l.Add("siio");
+            return l;
+        }
+
+        public override void SetCssID()
+        {
+            this.CssContainer.CssId = "SIIO";
+        }
+
+        public override void SetCssIsLocal()
+        {
+            this.CssContainer.CssIsLocal = false; 
+        }
+
+    }
+}

@@ -1,0 +1,57 @@
+﻿#ideiaSolicitarAcesso_principal
+{
+	width:400px;  
+    margin:auto;
+    font-family: sans-serif;
+    font-size: 1em;
+    border: 1px solid #CCC;
+    margin-top:30px;
+    padding-left:20px;
+    padding-right:20px;    
+    margin-bottom:30px;
+    padding-top:15px; 
+}
+
+#ideiaSolicitarAcesso_principal .centralizar
+{
+	text-align:center;
+	
+}
+
+
+/*Formulario*/
+
+#ideiaSolicitarAcesso_principal #ideiaSolicitarAcesso_formulario
+{
+    margin-bottom:10px;
+}
+
+#ideiaSolicitarAcesso_principal #ideiaSolicitarAcesso_formulario  label
+{
+    display:none; 
+}
+
+#ideiaSolicitarAcesso_principal #ideiaSolicitarAcesso_formulario  textarea
+{
+    border: 1px solid #CCC;
+    width:100%;
+    height:100px;
+}
+
+#ideiaSolicitarAcesso_principal #ideiaSolicitarAcesso_formulario  textarea:focus
+{
+    background: #FFC;
+}
+
+/*texto*/
+
+#ideiaSolicitarAcesso_principal #ideiaSolicitarAcesso_texto 
+{
+    width:100%
+}
+
+#ideiaSolicitarAcesso_principal #ideiaSolicitarAcesso_texto p
+{
+    margin-bottom: 0.5em;
+    color: #666;
+}

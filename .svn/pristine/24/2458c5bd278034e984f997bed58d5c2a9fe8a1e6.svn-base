@@ -1,0 +1,15 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UcIdeia.ascx.cs" Inherits="SIIO.UI.Controles.UcIdeia" %>
+<div id="divPrincipal" runat="server">
+    <a id="Link" runat="server">
+        <strong>
+            <span id="Titulo" runat="server" ></span>
+        </strong>
+        <p/>
+        <span id="PreDescricao" runat="server" ></span>
+        <p/>
+        Postado em:
+        <span  id="DataPostagem" runat="server"></span>
+    </a>
+</div>
+
+

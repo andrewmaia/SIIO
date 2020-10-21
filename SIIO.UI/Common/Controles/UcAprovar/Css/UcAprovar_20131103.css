@@ -1,0 +1,14 @@
+﻿#ucAprovar_principal 
+{
+    text-align:center;
+}
+
+#ucAprovar_principal a
+{
+    text-align:center;
+    text-decoration: none;
+    color: #669;
+    font-family: Sans-Serif;
+    font-size: 12px;  
+    text-decoration: underline;
+}

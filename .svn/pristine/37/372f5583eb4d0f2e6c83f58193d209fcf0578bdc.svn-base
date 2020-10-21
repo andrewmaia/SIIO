@@ -1,0 +1,134 @@
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeBehind="Default.aspx.cs" Inherits="SIIO.UI._Default" %>
+
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <style type="text/css">
+        .style1
+        {
+        }
+        .style2
+        {
+            width: 1267px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <table>
+        <tr>
+            <td width="10%">
+                &nbsp;
+            </td>
+            <td width="90%" class="style1">
+                <div align="center">
+                    <br />
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagens/SIIO_LOGO.jpg" Height="63px"
+                        Width="296px" />
+                    <br />
+                    <br />
+                    <asp:Button ID="btnPesquisar" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click"
+                        Style="height: 26px" />&nbsp;
+                    <asp:TextBox ID="txtPesquisa" runat="server" Width="531px" MaxLength="50"></asp:TextBox>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:CheckBox ID="chkFinancas" runat="server" Text="Finanças" TextAlign="Left" /><b>|</b>&nbsp;
+                        <asp:CheckBox ID="chkEconomia" runat="server" Text="Economia" TextAlign="Left" /><b>|</b>&nbsp;
+                        <asp:CheckBox ID="chkDireito" runat="server" Text="Direito" TextAlign="Left" /><b>|</b>&nbsp;
+                        <asp:CheckBox ID="chkArtes" runat="server" Text="Artes" TextAlign="Left" /><b>|</b>&nbsp;
+                        <asp:CheckBox ID="chkEsporte" runat="server" Text="Esportes" TextAlign="Left" /><b>|</b>&nbsp;
+                        <asp:CheckBox ID="chkInternet" runat="server" Text="Internet" TextAlign="Left" />
+                    </div>
+                </div>
+                <br />
+                <br />
+            </td>
+            <td width="10%" valign="middle">
+                &nbsp;
+                <iframe src="Usuario/Login.aspx" frameborder="0" style="height: 154px; width: 223px">
+                    teste</iframe>
+            </td>
+        </tr>
+    </table>
+    <center>
+        <div style="width: 1300px" id="DivPrincipal">
+            <table style="border: 3px solid #000000;">
+                <tr>
+                    <td align="center">
+                    </td>
+                    <td align="center" colspan="3">
+                        &nbsp;
+                        <asp:Label ID="lblContador" runat="server" Font-Bold="True" ForeColor="Gray" Text="lblContador"
+                            Visible="False"></asp:Label>
+                    </td>
+                    <td align="center">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 25%" rowspan="3" valign="top" align="center">
+                        Como funciona
+                        <iframe width="300" height="233" src="http://www.youtube.com/embed/8BS7PKAOgK0" frameborder="0"
+                            allowfullscreen="true"></iframe>
+                    </td>
+                    <td colspan="3">
+                        <asp:GridView ID="gvPesquisa" runat="server" CellPadding="4" ForeColor="#333333"
+                            GridLines="None" Visible="False" OnRowDataBound="gvPesquisa_RowDataBound">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        </asp:GridView>
+                    </td>
+                    <td rowspan="3" valign="top" align ="center">
+                        Publicidade
+                        <div style="border-width: thin; border-color: inherit; border-style: solid; width: 250px;
+                            height: 350px">
+                            <asp:GridView ID="GridView3" runat="server">
+                            </asp:GridView>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 25%">
+                        &nbsp;
+                    </td>
+                    &nbsp;&nbsp;&nbsp;
+                    <td>
+                    </td>
+                    <td style="width: 25%">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="center">
+                        <asp:GridView ID="gvIdeiasRecentes" runat="server" CellPadding="4" ForeColor="#333333"
+                            GridLines="None" OnRowDataBound="gvIdeiasRecentes_RowDataBound">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        </asp:GridView>
+                    </td>
+                    <td align="center">
+                    </td>
+                    <td valign="top" align="center">
+                        <asp:GridView ID="gvMaisVistos" runat="server" CellPadding="4" ForeColor="#333333"
+                            GridLines="None" OnRowDataBound="gvMaisVistos_RowDataBound">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        </asp:GridView>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
+</asp:Content>

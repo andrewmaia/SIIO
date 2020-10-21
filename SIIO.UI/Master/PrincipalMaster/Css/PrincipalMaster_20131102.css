@@ -1,0 +1,21 @@
+﻿/*Cabecalho Login*/
+#master_login 
+{
+	text-align:right;
+	margin-top: 15px;
+	margin-right: 25px;
+	margin-left: 50px;
+}
+
+
+#master_login a
+{
+    margin: 5px 5px 5px 5px 
+}
+
+/*Div Principal da master page*/
+#master_principal {
+	width:1000px;
+	margin:0 auto;
+}
+

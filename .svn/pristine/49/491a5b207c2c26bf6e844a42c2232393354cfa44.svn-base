@@ -1,0 +1,43 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="IdeiaAcessoRestrito.aspx.cs" Inherits="SIIO.UI.Ideia.IdeiaAcessoRestrito" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <table>
+        <tr>
+            <td>
+            </td>
+            <td colspan="3">
+                <asp:Label ID="Label1" runat="server" Text="Algumas idéias são visualizadas apenas por aqueles que o autor permita o acesso, para isso basta você entrar com seu login e senha, caso já tenha permissão ou solicitar acesso ao autor." 
+                    BorderStyle="Solid" Height="75px" Width="501px"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td colspan="2">
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td colspan="2">
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+            <div><b>É novo por aqui?</b> Crie seu login e senha - é rapido e grátis</div>
+                </td>
+            <td colspan="2">
+                <asp:Button ID="btnRegistro" runat="server" Text="Registre-se Agora" />
+                </td>
+        </tr>
+    </table>
+</asp:Content>

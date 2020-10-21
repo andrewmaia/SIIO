@@ -1,0 +1,27 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web;
+using SIIO.DA;
+using SIIO.Model;
+
+namespace SIIO.BO
+{
+    public class Usuario
+    {
+        BaseDA usuarioDA = new BaseDA();
+
+        public DataTable ValidarLogin(string pEmail, string pSenha)
+        {
+            DataTable dtDadosUsuario = new DataTable();
+
+            dtDadosUsuario.BeginLoadData();
+            dtDadosUsuario = this.usuarioDA.ValidarUsuario(pEmail, pSenha).Tables[0];
+            dtDadosUsuario.EndLoadData();
+
+            return dtDadosUsuario;
+        }
+    }
+}

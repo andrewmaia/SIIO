@@ -1,0 +1,63 @@
+﻿/*Formulario*/
+.formulario
+{
+    text-align:left 
+}
+
+.formulario legend
+{
+    display:none; 
+}
+
+.formulario fieldset
+{
+    border:0px; 
+}
+
+.formulario .campo 
+{
+    margin-bottom: 1em;
+}
+
+.formulario .campo label {
+    margin-bottom: 0.2em;
+    color: #666;
+    display: block;
+}
+
+ 
+.formulario .campo input[type="text"],
+.formulario .campo input[type="password"],
+.formulario .campo input[type="checkbox"],
+.formulario .campo input[type="file"],
+.formulario .campo textarea,
+.formulario .campo select
+{
+    padding: 0.2em;
+    border: 1px solid #CCC;
+}
+
+ 
+.formulario .campo input:focus,
+.formulario .campo select:focus
+{
+    background: #FFC;
+}
+
+.formulario .campo select option {
+    padding-right: 1em;
+}
+
+.formulario .campo .checkbox {
+    color: #999;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.formulario .campo .checkbox,
+.formulario .campo label input[type="checkbox"],
+.formulario .campo select
+{
+    cursor: pointer;
+}
+

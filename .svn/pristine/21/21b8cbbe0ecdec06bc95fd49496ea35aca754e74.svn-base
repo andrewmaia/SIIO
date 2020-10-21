@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace SIIO.UI
+{
+    public partial class Site1 :Atomo.Web.MasterPage
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void RegisterLinks()
+        {
+            this.CssContainer.CssLinkedInfo.Add("default", new Atomo.Web.CssInfo("Styles/Default.css", "Styles/Default.css", "all"));
+        }
+    }
+}

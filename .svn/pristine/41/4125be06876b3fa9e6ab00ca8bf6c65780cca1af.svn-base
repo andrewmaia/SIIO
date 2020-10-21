@@ -1,0 +1,25 @@
+﻿using System;
+using Atomo.Data;
+using System.Collections.Generic;
+
+
+namespace SIIO.DA
+{
+    public class Ideia : BaseDA 
+    {
+        public object MaisVistas()
+        {
+            return rb.EncapsulatedRead<Model.Ideia>(null, "dbo.Ideia_MaisVistas", false); 
+        }
+
+        public object Recentes()
+        {
+            return rb.EncapsulatedRead<Model.Ideia>(null, "dbo.Ideia_Recentes", false);
+        }
+
+        public object Buscar(Model.Ideia ideiaModel)
+        {
+            return rb.EncapsulatedRead<Model.Ideia>(ideiaModel, "dbo.Ideia_Buscar", false);
+        }
+    }
+}

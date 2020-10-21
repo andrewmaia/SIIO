@@ -1,0 +1,48 @@
+﻿using System;
+using SIIO.DA;
+using SIIO.Model;
+using System.Web;
+using System.Data;
+using SIIO.Model.Enums;
+
+namespace SIIO.BO
+{
+    public class Usuario
+    {
+        BaseDA baseDA = new BaseDA();
+        DA.Usuario usuarioDA = new DA.Usuario();
+
+        public DataTable ValidarLogin(string pEmail, string pSenha)
+        {
+            DataTable dtDadosUsuario = new DataTable();
+
+            dtDadosUsuario.BeginLoadData();
+            dtDadosUsuario = this.baseDA.ValidarUsuario(pEmail, pSenha).Tables[0];
+            dtDadosUsuario.EndLoadData();
+
+            return dtDadosUsuario;
+        }
+
+        public Autenticacao ValidarLogin2(string email, string senha)
+        {
+            Model.Usuario usuarioModel = new Model.Usuario();
+            usuarioModel.Email = email;
+            usuarioModel.Senha = senha;
+            return (Autenticacao) usuarioDA.Validar(usuarioModel);   
+        }
+
+        public bool ExisteEmail(string email)
+        {
+            Model.Usuario usuarioModel = new Model.Usuario();
+            usuarioModel.Email = email;
+            return usuarioDA.ExisteEmail(usuarioModel);  
+        }
+
+        public void Inserir(Model.Usuario usuarioModel)
+        {
+            usuarioModel.Situacao = true;
+            usuarioModel.DataCadastro = DateTime.Now;
+            usuarioDA.Inserir(usuarioModel);  
+        }
+    }
+}

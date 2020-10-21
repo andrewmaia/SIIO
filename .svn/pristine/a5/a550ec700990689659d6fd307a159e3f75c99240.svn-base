@@ -1,0 +1,11 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="IdeiaAcessoPermitido.aspx.cs" Inherits="SIIO.UI.Ideia.IdeiaAcessoPermitido" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<table>
+<tr>
+<td>
+    <asp:Label ID="lblIdeia" runat="server" Text="Seu acesso é garantido a esta Ideia." BorderStyle="Solid"></asp:Label></td>
+</tr>
+</table>
+</asp:Content>

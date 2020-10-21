@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using SIIO.DA;
+using SIIO.Model;
+
+namespace SIIO.BO
+{
+    public class Ideia
+    {
+        BaseDA IdeiaDA = new BaseDA();
+
+        public DataTable IdeiasRecentes()
+        {
+            DataTable dtDadosIdeia = new DataTable();
+
+            dtDadosIdeia.BeginLoadData();
+            dtDadosIdeia = this.IdeiaDA.BuscaIdeias(1, 5).Tables[0];
+            dtDadosIdeia.EndLoadData();
+
+            return dtDadosIdeia;
+        }
+
+        public DataTable IdeiasMaisVistas()
+        {
+            DataTable dtDadosIdeia = new DataTable();
+
+            dtDadosIdeia.BeginLoadData();
+            dtDadosIdeia = this.IdeiaDA.BuscaIdeias(2, 4).Tables[0];
+            dtDadosIdeia.EndLoadData();
+
+            return dtDadosIdeia;
+        }
+
+        public DataTable PesquisarAssunto(string pBusca, string pCategoria)
+        {
+            DataTable dtDadosIdeia = new DataTable();
+
+            dtDadosIdeia.BeginLoadData();
+            dtDadosIdeia = this.IdeiaDA.PesquisarAssunto(pBusca, pCategoria).Tables[0];
+            dtDadosIdeia.EndLoadData();
+
+            return dtDadosIdeia;
+        }
+    }
+}
